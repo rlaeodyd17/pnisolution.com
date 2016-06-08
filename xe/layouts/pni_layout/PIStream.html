@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>PIStream</title>
+		<meta name="description" content="">
+		<meta name="author" content="Kevin">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<style>
+			div.container_wrap {
+				background-color: #7F7D7E;
+				font-family: 'Malgun Gothic','Segoe UI', sans-serif;
+				color: #606060;
+			}
+			div.container_box {
+				width: 90%;
+				margin: 0 auto;
+				background-color: #F7F7F7;
+			}
+			#detailedWrap {
+				background-color: #F7F7F7;
+				margin: 0px 50px;
+			}
+
+			#detailedWrap > img.bg_header {
+				width: 100%;
+				padding-top: 30px;
+				padding-bottom: 30px;
+				
+			}
+
+			/*----- Tabs -----*/
+			.tabs {
+				width: 100%;
+				display: inline-block;
+				
+			}
+
+			h2 {
+				padding: 10px 10px 10px 20px;
+				margin: 0px 30px;
+				font-size: 2em;
+				font-weight: 700;
+				background: transparent;
+				border-bottom:2px solid #C0C0C0;
+			}
+			
+			/*----- Tabs h3 -----*/
+			h3 {
+				padding: 30px;
+				margin: 0;
+				font-size: 1.6em;
+				background-color: #FFFFFF;
+			}
+
+			/*----- headline of paragraph in Tabs -----*/
+			.tabs h4 {
+				font-size: 1.5em;
+				margin: 20px 0px;
+				padding: 30px;
+				background-color: #FFFFFF;
+			}
+
+			/*----- sub_title_introduction -----*/
+			.sub_title_introduction {
+				display: block;
+				color: #3366CC;
+				border-left: 5px solid #6C9EDD;
+				padding-left: 10px;
+				font-size: 1.4em;
+				font-weight: 700;
+			}
+
+			/*----- Tab Links -----*/
+			/* Clearfix */
+			.tab-links:after {
+				display: block;
+				clear: both;
+				content: '';
+			}
+			.tabs > ul {
+				margin: 0;
+				padding: 0;
+			}
+
+			.tab-links li {
+				margin: 0;
+				margin-right: 10px;
+				padding: 0;
+				list-style: none;
+				display: inline-block;
+				vertical-align: middle;
+				background-color: #D7D7D7;
+			}
+
+			.tab-links a {
+				padding: 10px;
+				display: block;
+				text-align: center;
+				text-decoration: none;
+				font-size: 1.3em;
+				color: #4c4c4c;
+				transition: all linear 0.15s;
+			}
+
+			.tab-links a:hover {
+				background: #3CBECE;
+				text-decoration: none;
+			}
+
+			li.active_subTab a, li.active_subTab a:hover {
+				background: #3CBECE;
+				color: #FFFFFF;
+			}
+
+			/*----- Content of Tabs -----*/
+			.tab-content {
+				/*padding: 10px;*/
+			}
+
+			.tab {
+				display: none;
+				border: 1px solid #B2B2B2;
+				
+			}
+
+			/*----- image of Tabs -----*/
+			.tab > img {
+				width: 100%;
+			}
+
+			.tab.active_subTab {
+				display: block;
+				width: 100%;
+			}
+
+			/*----- paragraph of Tabs -----*/
+
+			.sub_title_box {
+				min-height: 70px;
+				background: #FFFFFF;
+				line-height: 70px;
+				margin: 30px;
+				padding-left: 20px;
+			}
+
+			/*----- Inline Style Sheet <span> ----*/
+
+			.sub_title_name, .sub_introduction {
+				display: block;
+				background: #fff;
+				margin-bottom: 2px;
+				padding-left: 10px;
+				font-size: 1.5em;
+			}
+
+			.feature_title_name {
+				display: block;
+				margin: 10px 0px;
+				padding-left: 10px;
+				font-size: 1.5em;
+			}
+
+			.ul_title_name {
+				display: block;
+				margin-bottom: 20px;
+				font-size: 1.3em;
+			}
+
+			.tabs img {
+				display: block;
+				width: 100%;
+				height: 350px;
+			}
+
+			#tab1 {
+				position: relative;
+				float: left;
+			}
+			.feature {
+				position: relative;
+				min-height: 250px;
+				margin-bottom: 30px;
+				margin-left: 30px;
+				margin-right: 30px;
+				background-color: #FFFFFF;
+			}
+			
+			.testimonial {
+				background-color:#D4DFFF;
+			}
+
+		    .feature > .feature_img_box {
+		    	position: absolute;
+				left: 0;
+				/*width: 600px;*/
+				width: 30%;
+				height: 250px;
+				display: inline-block;
+		    }
+		   			
+			.feature > .feature_img_box > img {
+				width: 100%;
+				height: 100%;
+			}
+
+			.feature > h5.feature_title {
+				position: absolute;
+				/*left: 600px;*/
+				left: 30%;
+				font-size: 1.2em;
+				margin: 0;
+				padding: 20px;
+			}
+
+			.feature > p.archives {
+				position: absolute;
+				left: 30%;
+				top: 50px;
+				margin:0;
+				padding: 15px 30px 30px 30px;
+			}
+
+			.pdn_background {
+				position: relative;
+				/*width: 100%;*/
+				height: 540px;
+				margin-bottom: 30px;
+				margin-left: 30px;
+				margin-right: 30px;
+				background-color: #FFFFFF;
+			}
+
+			.pdn_background > img {
+				position: absolute;
+				left: 0;
+				/*width: 450px;*/
+				width: 30%;
+				height: 540px;
+				display: inline-block;
+			}
+
+			.pdn_background > h5.feature_title {
+				position: absolute;
+				/*left: 450px;*/
+				left: 30%;
+				font-size: 1.2em;
+				margin: 0;
+				padding: 20px;
+			}
+
+			.pdn_background > p.archives {
+				position: absolute;
+				/*left: 450px;*/
+				left: 30%;
+				padding: 30px;
+			}
+			
+			div.item_box {
+				background-color: #EDEDED;
+				border: 2px solid #B2B2B2;
+			}
+			div.item_box > ul {
+				background-color: #EDEDED;
+				width: 30%;
+				height: 170px;
+				float: left;
+				display: inline-block;
+			    padding-left: 20px;
+
+			}
+
+			div.item_box > ul:nth-child(3) {
+				border-left: 2px solid #B2B2B2;
+				border-right: 2px solid #B2B2B2;
+			}
+			
+			.pdn_feature_title {
+				margin: 0;
+				padding-left: 30px;
+				height: 70px;
+				line-height: 70px;
+				font-size: 1.5em;
+			}
+			
+			.highlite {
+				color:#FF0000;
+			}
+			.pdn_archives {
+				margin: 0;
+				padding: 0px 0px 20px 50px;
+			}
+			
+			.pdn_feature1  {
+				height: 370px;
+			} 
+			.pdn_feature2  {
+				height: 500px;
+			} 
+			
+			.pdn_feature1 > .pdn_img ,.pdn_feature2 > .pdn_img {
+				width:100%;
+				height:100%;
+			}
+			
+			.sub_feature {
+				padding-left: 30px;
+				height: 100%;
+			}
+
+			.sub_feature > p > strong {
+				font-size:1.3em;
+				font-weight:bold;
+			}
+			.feature_box_minimize {
+				min-height: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- .container_wrap -->
+		<div class="container_wrap">
+			<!-- .container_box -->
+			<div class="container_box">
+				<h2>PDNDesigner</h2>
+				<!--  #detailedWrap -->
+				<div id="detailedWrap">
+					<img class="bg_header" alt="PDNDesigner_banner" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pdn_top_banner.jpg" />
+					<!-- .tabs -->
+					<div class="tabs">
+						<ul class="tab-links">
+							<li class="active_subTab">
+								<a href="#tab1">ADVANTAGES</a>
+							</li>
+							<li>
+								<a href="#tab2">FEATURES</a>
+							</li>
+							<li>
+								<a href="#tab3">BACKGROUND</a>
+							</li>
+							<li>
+								<a href="#tab4">EXAMPLES</a>
+							</li>
+						</ul>
+						<!-- .tab-content -->
+						<div class="tab-content">
+							<!-- #tab1 -->
+							<div class="tab active_subTab" id="tab1">
+								<div class="sub_title_box">
+									<strong class="sub_title_name">ADVANTAGES</strong>
+								</div>
+								<!-- .feature -->
+								<div class="feature feature_box_minimize">
+									<!-- <img alt="emi_con_img_01_1.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/emi_con_img_01_1.jpg" /> -->
+									<h5 class="pdn_feature_title">What is PDNDesigner</h5>
+									<p class="pdn_archives">
+										최근 예기치 않은 Power bus의 노이즈가 증가되고 있으며, 이로 인해 오작동 없는 PCB 개발이 힘들어지고 있습니다. <br />
+										<br />
+										Power bus 노이즈를 줄이기 위해서는 이른 개발 단계에서부터 노력하는 것이 중요합니다. <br />
+										<br />
+										PDNDesigner는 초기 개발 단계에서부터 board, capacitor, chip과 pacakage 등을 고려하여 효과적으로 Power bus 노이즈 저감을 가능하게 합니다.<br />
+										<br />
+									</p>
+								</div>
+								<!--// .feature -->
+								<!-- .feature .pdn_feature1 -->
+								<div class="feature pdn_feature1">
+									<img class="pdn_img" alt="pdn_con_img_01_1.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pdn_con_img_01_1.jpg" />
+								</div>
+								<!--// .feature .pdn_feature1 -->
+								<div class="sub_title_box">
+									<strong class="sub_title_name">Adavantages of PDNDesigner</strong>
+								</div>
+								<div class="feature feature_box_minimize">
+									<h5 class="pdn_feature_title highlite">Capacitor optimization tool for early PCB design phase</h5>
+									<p class="pdn_archives">
+										전통적인 분석 방법으로는, 단지 PCB의 마지막 개발 단계 혹은 개발이 완료 된 이후에서야 분석이 가능했었습니다. <br />
+										PDNDesigner는 초기 개발 단계에서부터 캐패시턴스나 개수 등의 capacitor를 최적화할 수 있습니다.  <br />
+										이른 개발 단계부터 PI 이슈들을 제거하기 위해 도움을 주는 PDNDesigner로 인하여, 재작업이 줄어들거나 빠른 시간에 제품 출고가 가능할 것입니다.<br />
+									</p>
+								</div>
+								<!-- .feature .pdn_feature2 -->
+								<div class="feature pdn_feature2">
+									<img class="pdn_img" alt="pdn_con_img_01_2.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pdn_con_img_01_2.jpg" />
+								</div>
+								<!--// .feature .pdn_feature2 -->
+								<div class="feature feature_box_minimize">
+									<h5 class="pdn_feature_title highlite">Speedy analysis. </h5>
+									<p class="pdn_archives">
+										분석에 소요되는 시간은 한 번 수행하는데 단지 1초이며, 기존의 SPICE 엔진보다 약 100배 빠른 속도입니다. <br />
+										보통 PCB 레이아웃 디자인을 사용하는 분석 툴은 상당한 시간이 걸립니다.  <br />
+										예를 들어, 셋업에 1주, 분석에 1주, 보고서 작성에 몇 주가 걸립니다. 따라서 엔지니어는 시뮬레이션과 분석에 전념할 수 밖에 없습니다.<br />
+										반면에 PDNDesigner는 배우기 쉬우며 사용자에게 친숙한 매우 효과적인 툴입니다.<br />
+										셋업에서 분석까지 단지 몇 시간밖에 걸리지 않으며, 보고서 작성을 포함한 전반적인 분석을 수행하는데 단지 하루가 소요될 뿐입니다. <br />
+									</p>
+								</div>
+								<div class="feature sub_feature feature_box_minimize">
+									<h5 class="pdn_feature_title">1. Preparation - layout data and common libraries pre-installed：</h5>
+									<p class="pdn_archives">
+										PCB 레이아웃 데이터를 사용하는 기존 분석 툴은 복잡한 테스트 혹은 분석 이전에 데이터를 수정해야 할지도 모릅니다.<br />
+										PDNDesigner PCB 레이아웃 데이터는 위 과정이 필요 없습니다.   <br />
+										단지 plane의 크기 혹은 s-parameter의 PCB 데이터만을 입력해주기만 하면 됩니다.<br />
+										게다가, 공통 capacitor 라이브러리는 설치와 동시에 셋업되어 바로 사용하시면 됩니다.<br />
+									</p>
+								</div>
+								<div class="feature sub_feature">
+									<h5 class="pdn_feature_title">2. Analysis - Easy setup and immediately solve PDN problems</h5>
+									<p class="pdn_archives">
+										<strong>User friendly and easy to learn :  </strong>
+										<br />
+										<br />
+										사용자 친화적인 GUI로 작동이 쉽습니다. <br />
+										모든 분석 결과는 바로 저장되며, 언제든지 다시 확인 가능합니다.<br />
+										<br />
+										<strong>Speedy analysis :  </strong>
+										<br />
+										<br />
+										기존의 SPICE 엔진보다 100배 빠릅니다.<br />
+										1개의 분석에 단지 1초만이 소요됩니다.<br />
+										즉각적으로 capacitor의 개수와 값을 최적화합니다.<br />
+									</p>
+								</div>
+								<div class="feature sub_feature feature_box_minimize">
+									<h5 class="pdn_feature_title">3. Analyze results and create reports</h5>
+									<p class="pdn_archives">
+										일반적으로, PCB 개발이 완료된 이후에 PI 문제의 원인을 분별하는 것은 무척 어려운 일입니다.<br />
+										PDNDesigner는 광범위하게 각기 다른 요소들을 관찰하여 문제 요소들을 세세하게 알 수 있도록 도와줍니다.   <br />
+										게다가, 모든 분석 결과 및 시뮬레이션 정보들은 자동적으로 엑셀 파일로 변환되어 고객님이 보고서 작성에 소중한 시간을 낭비하지 않도록 도와줄 것입니다.<br />
+									</p>
+								</div>
+								<div class="feature feature_box_minimize">
+									<h5 class="pdn_feature_title highlite">Optimize capacitors</h5>
+									<p class="pdn_archives">
+										PDNDesigner는 고객님의 세부적인 개발 가이드라인이나 요구사항에 맞도록 캐패시턴스와 개수 등의 capacitor의 최적화를 지원합니다. PDNDesigner는 capacitor의 특징들과 효과를 보다 효과적으로 이해할 수 있도록 지원하며, 엔지니어들이 Power Integrity에 보다 쉽게 접근할 수 있도록 도와줍니다. 고객님은 더 이상 PI에 전문가가 되실 필요가 없습니다. PDNDesigner가 고객님을 이끌어 드릴 것입니다. Power Integrity를 진행하는 동안, 고객님은 capacitor를 효과적으로 줄일 수 있으며, 비용뿐만 아니라 설계 품질 또한 높아질 것입니다.<br />
+										이른 개발 단계부터 PI 이슈들을 제거하기 위해 도움을 주는 PDNDesigner로 인하여, 재작업이 줄어들거나 빠른 시간에 제품 출고가 가능할 것입니다.<br />
+									</p>
+								</div>
+								<div class="feature testimonial">
+									<h5 class="pdn_feature_title">User Testimonials</h5>
+									<p class="pdn_archives">
+										이른 개발 단계에서부터 PDNDesigner를 사용하여 Power Integrity를 준수할 수 있도록 capacitor의 개수를 줄여드릴 것 입니다.<br />
+										PDNDesigner의 가장 큰 이점은 경험이 아니라 실제 시뮬레이션 결과를 통한 값을 얻을 수 있다는 것입니다. 고객님은 단지 PDNDesigner를 초보 엔지니어가 교육용 툴을 사용하는 것만큼만 해도 충분합니다.<br />
+										고객님은 PDNDesigner를 통하여 board, IC 혹은 capacitor등과 같은 요소가 노이즈를 증가시키는지 확실히 알 수 있으며 쉽게 그 솔루션을 얻을 수 있습니다. PDNDesigner의 놀랍도록 빠른 분석 속도로 인하여 바쁜 엔지니어들이 개발에 들이는 시간을 줄일 수 있습니다.<br />
+										생소한 capacitor나 숨겨진 캐패시턴스 들도 PDNDesigner를 통한다면 충분히 시뮬레이션을 하여 그들이 가진 이점을 알 수 있을 것입니다. 이것은 상당한 금전적, 시간적 비용을 절감시킬 수 있습니다.<br />
+										PDNDesigner를 통하여 고객님의 Power Integrity 활동에 강한 경쟁력이 생기길 바랍니다.<br />
+										PCB 설계에 있어 Power bus 노이즈의 우선 순위를 정하는데 도움이 되기를 바랍니다.<br />
+									</p>
+								</div>
+							</div>
+							<!--//#tab1 .tab .active_subTab  -->
+							<!--#tab2  .tab -->
+							<div class="tab" id="tab2">
+								<div class="sub_title_box">
+									<strong class="sub_title_name">FEATURES</strong>
+								</div>
+								<!-- .feature -->
+								<div class="feature">
+									<div class="feature_img_box">
+										<img alt="pdn_con_img_02_1.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pni_con_img_02_1.jpg" />
+									</div>
+									<h5 class="feature_title">Optimize capacitors including capacitance and quantity.</h5>
+									<p class="archives">
+										EMI는 power와 ground plane 사이에 공진이 발생될 때 증가합니다.
+										<br />
+										<br />
+										Power와 ground plane 공진 분석 기능은 PEEC(Partial Element Equivalent Circuit) 방법론에 기초하여 plance 형태, 캐패시터, power/ground plane 사이의 거리를 계산합니다.
+										<br />
+										<br />
+									</p>
+								</div>
+								<!--// .feature -->
+								<!-- .feature -->
+								<div class="feature">
+									<div class="feature_img_box">
+										<img alt="pdn_con_img_02_2.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pni_con_img_02_2.jpg" />
+									</div>
+									<h5 class="feature_title">Simulate different capacitor placement scenarios</h5>
+									<p class="archives">
+										Far Field EMI는 plane의 edge 전압 (한 쌍의 ground와 power)에 의해 계산되어집니다.
+										<br />
+										또한 수직 혹은 수평의 주파수 특징과 azimuth pattern을 디스플레이합니다.
+										<br />
+										PCB의 턴 테이블에서의 위치, 안테나로부터의 거리 그리고 안테나의 높이와 같은 환경적인 요소들을 수정할 수 있습니다.
+										<br />
+									</p>
+								</div>
+								<!--// .feature -->
+								<!-- .feature -->
+								<div class="feature">
+									<div class="feature_img_box">
+										<img alt="pdn_con_img_02_3.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pni_con_img_02_3.jpg" />
+									</div>
+									<h5 class="feature_title">Consider plane shape and stackup</h5>
+									<p class="archives">
+										여러 층의 레이어를 한번에 분석하는 기능을 제공합니다.
+										<br />
+										캐패시터의 위치 변화에 따른 공진 감소뿐만 아니라, EMIStream은 비아의 위치 및 개수 그리고 필요에 의하면 위치의 변경 및 추가까지도 제공합니다.
+										<br />
+									</p>
+								</div>
+								<div class="feature">
+									<div class="feature_img_box">
+										<img alt="pdn_con_img_02_4.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pni_con_img_02_4.jpg" />
+									</div>
+									<h5 class="feature_title">Combine elements and analyze multiple results</h5>
+									<p class="archives">
+										EMI는 power와 ground plane 사이에 공진이 발생될 때 증가합니다.
+										<br />
+										Power와 ground plane 공진 분석 기능은 PEEC(Partial Element Equivalent Circuit) 방법론에 기초하여 plance 형태, 캐패시터, power/ground plane 사이의 거리를 계산합니다.
+										<br />
+									</p>
+								</div>
+								<!-- .feature .pdn_feature1 -->
+								<div class="feature pdn_feature1">
+									<img class="pdn_img" alt="pdn_con_img_02_5.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pdn_con_img_02_5.jpg" />
+								</div>
+								<!--// .feature .pdn_feature1 -->
+								<div class="feature testimonial">
+									<h5 class="pdn_feature_title">Hardware Requirements</h5>
+									<p class="pdn_archives">
+										OS Windows XP SP2、 Vista<br />
+										CPU 1GHz or more<br />
+										Memory 512MB or more<br />
+										Disk System 20MB+data area [over 100MB is preferred]<br />
+										Others Office Excel　2003/2007<br />
+									</p>
+								</div>
+								<!--// .feature -->
+							</div>
+							<!--//#tab2 .tab  -->
+							<!--#tab3  .tab -->
+							<div class="tab" id="tab3">
+								<div class="sub_title_box">
+									<strong class="sub_title_name">BACKGROUND</strong>
+								</div>
+								<div class="sub_title_box">
+									<strong class="sub_title_name">Countermeasures for Power Integrity Problems?</strong>
+								</div>
+								<!-- .feature -->
+								<div class="feature pdn_feature1">
+									<img class="pdn_img" alt="pdn_con_img_03_1.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pdn_con_img_03_1.jpg" />
+								</div>
+								<div class="sub_title_box">
+									<p class="pdn_archives">
+										Power bus 노이즈 마진은 Power 전압의 감소와 전류 소비의 증가에 따라 매년 줄어들고 있습니다.	이 때문에, 오작동 없는 PCB를 개발하는 것은 더욱 어려워지고 있습니다.
+									</p>
+								</div>
+								<div class="feature feature_box_minimize">
+									<h5 class="pdn_feature_title">PDN (Power Distribution Network)</h5>
+									<p class="pdn_archives">
+										VRM에서 IC로의 전압 변동에서 야기되는 전원 공급 장치의 경로에 존재하는 인덕턴스는 device의 성능에 큰 영향을 끼칩니다. <br />
+										<br />
+										Power bus 노이즈를 줄이기 위해서는 이른 개발 단계에서부터 노력하는 것이 중요합니다.<br />
+									</p>
+								</div>
+								<div class="feature pdn_feature1">
+									<img class="pdn_img" alt="pdn_con_img_03_2.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pdn_con_img_03_2.jpg" />
+								</div>
+								<div class="feature pdn_background">
+									<img alt="pdn_con_img_03_3.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pdn_con_img_03_3.jpg" />
+									<h5 class="feature_title">개요</h5>
+									<p class="archives">
+										<br />
+										위 그림에서 웨이브의 떨림은 무엇 때문에 발생할까요?
+										반사 혹은 crosstalk으로 인하여 야기되는 것이며, 또한 Power bus 노이즈로 인하여 발생됩니다. 
+										그러므로, Power bus 노이즈는 SI와 EMC에 아주 크게 영향을 끼친다고 할 수 있습니다.
+										<br />
+										Power bus 노이즈로 인하여 가장 크게 영향을 받는 SI는 timing에 문제(fluctuation)가 발생됩니다. 레퍼런스 전압에 기반한 Power supply 노이즈는 timing 마진의 감소로 인해 야기되는 logic state를 invert시킬 것입니다.
+										<br />
+										공통적으로 대두되는 EMI 문제는 EMI 방사의 증가입니다. Power bus 노이즈는 노이즈의 소스가 됩니다. 그리고 plane resonance가 EMI 노이즈가 증가됨에 따라 발생될 것입니다. 최근에는 SI 분석 이후에도 제대로 작동되지 않는 PCB를 보는 것은 어려운 일이 아닙니다. 종종 이러한 문제들은 PDN 분석에 의해 성공적으로 해결되기도 합니다. 이것은 고객님이 PI의 핵심적인 요소들을 효과적으로 분석한다면 SI와 EMI의 문제들을 해결할 수 있다는 것을 의미합니다. 이른 단계에서의 PDN 분석은 제품 개발을 튼튼하게 도와드릴 것입니다.
+										<br />
+										이 기능은 캐패시터의 위치, 개수 그리고 위 문제들을 제어하기 위한 캐패시턴스 값, 그리고 EMI/PI 협업 개발 솔루션 등을 제공합니다.
+										<br />
+									</p>
+								</div>
+								<!--// .feature -->
+							</div>
+							<!--//#tab3 .tab  -->
+							<div class="tab" id="tab4">
+								<div class="sub_title_box">
+									<strong class="sub_title_name">EXAMPLES</strong>
+								</div>
+								<div class="sub_title_box">
+									<strong class="sub_title_name">Analysis Examples</strong>
+								</div>
+								<!-- .feature -->
+								<div class="feature">
+									<div class="feature_img_box">
+										<img alt="pdn_con_img_04_1.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pdn_con_img_04_1.jpg" />
+									</div>
+									<h5 class="feature_title">Anti-resonance</h5>
+									<p class="archives">
+										반도체 기술과 관련된 전압 저하는 증가되고 있으며, IC 오작동에 의해 야기되는 전자파를 줄이기 위한 대책들이 엔지니어들에 의해 소개되고 있습니다.
+										<br />
+										이 기능은 캐패시터의 위치, 개수 그리고 위 문제들을 제어하기 위한 캐패시턴스 값, 그리고 EMI/PI 협업 개발 솔루션 등을 제공합니다.
+										<br />
+									</p>
+								</div>
+								<!--// .feature -->
+								<!-- .feature -->
+								<div class="feature">
+									<div class="feature_img_box">
+										<img alt="pdn_con_img_04_2.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pdn_con_img_04_2.jpg" />
+									</div>
+									<h5 class="feature_title">Reduce plane distance</h5>
+									<p class="archives">
+										Power Integrity 분석 기능은 고객님이 IC의 결함으로 기인하는 문제들을 방지하기 위한 캐패시터의 위치와 값을 분석하는데 도움을 제공합니다.
+										<br />
+										또한 수직 혹은 수평의 주파수 특징과 azimuth pattern을 디스플레이합니다.
+										<br />
+										PCB의 턴 테이블에서의 위치, 안테나로부터의 거리 그리고 안테나의 높이와 같은 환경적인 요소들을 수정할 수 있습니다.
+										<br />
+									</p>
+								</div>
+								<!--// .feature -->
+								<!-- .feature -->
+								<div class="feature">
+									<div class="feature_img_box">
+										<img alt="pdn_con_img_04_3.jpg" src="http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pdn_con_img_04_3.jpg" />
+									</div>
+									<h5 class="feature_title">Chip/PKG/PCB total analysis</h5>
+									<p class="archives">
+										GUI를 통해 Chip과 package의 캐패시턴스와 인덕턴스를 쉽게 도출할 수 있습니다.
+										<br />
+										이 값은 power integrity를 위해 중요한 중간 정도의 주파수 공진에 영향을 끼칩니다.
+										<br />
+										이 기능을 활용하여 고객님은 보다 정확한 캐패시터의 위치, 값, 개수 등을 최적화하실 수 있습니다.
+										<br />
+									</p>
+								</div>
+								<!--// .feature -->
+							</div>
+							<!--//#tab3 .tab  -->
+						</div>
+						<!--//.tab-content -->
+					</div>
+					<!--//.tabs  -->
+				</div>
+				<!--// #detailedWrap -->
+			</div>
+			<!--// .container_box -->
+		</div>
+		<!--// .container_wrap -->
+		<script src="js/jquery.js"></script>
+		<script>
+			jQuery(document).ready(function() {
+				jQuery('.tabs .tab-links a').on('click', function(e) {
+					var currentAttrValue = jQuery(this).attr('href');
+
+					// Show/Hide Tabs
+					jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+
+					// Change/remove current tab to active_subTab
+					jQuery(this).parent('li').addClass('active_subTab').siblings().removeClass('active_subTab');
+
+					e.preventDefault();
+				});
+				// Hide h1
+				jQuery("#content > h1").hide();
+				// Hide div.document_popup_menu
+     			jQuery(".document_popup_menu").hide();
+			});
+		</script>
+	</body>
+</html>

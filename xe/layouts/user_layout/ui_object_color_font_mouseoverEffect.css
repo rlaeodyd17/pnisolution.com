@@ -1,0 +1,120 @@
+@charset "UTF-8";
+
+body {
+	font-family: 'Malgun Gothic','Segoe UI', sans-serif;
+	background: #F8F8F8;													
+	color: #606060;		
+	/*font-size:100%;*/
+	font-size:13px;   													
+}
+
+/*****************************************
+header 영역  
+******************************************/
+/* 상단 수평 영역 border-bottom에 1px solid모양의 rgba(#BFBFBF)의 경계선 효과, 배경색에 대한 gradation 효과 */ 
+.horizon_top_box {
+	border-bottom: 1px solid #BFBFBF;  								   	
+	background: rgb(255,255,255);											
+	background: -moz-linear-gradient(top,  rgb(255,255,255) 0%, rgb(229,229,229) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(255,255,255)), color-stop(100%,rgb(229,229,229)));
+	background: -webkit-linear-gradient(top,  rgb(255,255,255) 0%,rgb(229,229,229) 100%);
+	background: -o-linear-gradient(top,  rgb(255,255,255) 0%,rgb(229,229,229) 100%);
+	background: -ms-linear-gradient(top,  rgb(255,255,255) 0%,rgb(229,229,229) 100%);
+	background: linear-gradient(to bottom,  rgb(255,255,255) 0%,rgb(229,229,229) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+}
+
+.logoBox {
+/*	background-image: url(http://vtk.a2sys.co.kr/xe/layouts/vtk_layout/img/150713-maincut_01.jpg);                    */
+}
+
+/*메인메뉴 a태그에 설정할 스타일 -> 폰트 사이즈,글씨 색상, 굵기 설정 */
+.mainMenuLink {                         
+	font-size:1.1em;                    									
+	color:#373737;															
+ 	font-weight: bold;														
+ }
+
+/*서브메뉴 a태그에 설정할 스타일 -> 폰트 사이즈,글씨 색상, 굵기 설정 */
+.subMenuLink {
+	font-size:1em;									                   	
+	color:#005091;															
+	font-weight: bold;														
+}
+
+/*****************************************
+mouse hover & active effect 관련  CSS 설정  
+******************************************/
+/* 메인 메뉴의 li에 마우스오버 되었을 때, mainMenuLink 클래스(메인메뉴 a 요소)에 대한 스타일 관련 transition 효과 (cubic-bezier로 애니메이션 효과) */
+.gnb > ul > li:hover .mainMenuLink { 
+   	color:#fff;																
+   	height:44px; 															
+   	background:#CC0000;													
+   	transition:.2s cubic-bezier(.29,.62,.61,.3);							
+}
+
+/* 메인 메뉴의 li에 마우스오버 되었을 때, 클래스 이름이 subMenu인 ul 태그에 대한 스타일 설정, border 이용 띠 효과 및 gradation*/
+.gnb > ul > li:hover .subMenu { 				
+	border-top: 10px solid #BFBFBF;												
+	border-bottom: 10px solid #BFBFBF;											
+	background: rgb(255,255,255); 					
+	background: -moz-linear-gradient(top,  rgb(255,255,255) 12%, rgb(209,209,209) 94%, rgb(225,225,225) 100%, rgb(246,246,246) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(12%,rgb(255,255,255)), color-stop(94%,rgb(209,209,209)), color-stop(100%,rgb(225,225,225)), color-stop(100%,rgb(246,246,246)));
+	background: -webkit-linear-gradient(top,  rgb(255,255,255) 12%,rgb(209,209,209) 94%,rgb(225,225,225) 100%,rgb(246,246,246) 100%);
+	background: -o-linear-gradient(top,  rgb(255,255,255) 12%,rgb(209,209,209) 94%,rgb(225,225,225) 100%,rgb(246,246,246) 100%);
+	background: -ms-linear-gradient(top,  rgb(255,255,255) 12%,rgb(209,209,209) 94%,rgb(225,225,225) 100%,rgb(246,246,246) 100%);
+	background: linear-gradient(to bottom,  rgb(255,255,255) 12%,rgb(209,209,209) 94%,rgb(225,225,225) 100%,rgb(246,246,246) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
+	visibility:visible;
+	opacity:1;
+	transition:.2s cubic-bezier(.29,.62,.61,.3);
+}
+
+/* 메인 메뉴의 li가 선택 되었을 때 설정 -> 클래스 이름이 mainMenuLink인 a요소의 글씨 색 설정 */
+.gnb> ul> li.active .mainMenuLink {    
+    	background:#CC0000;
+    	color:#fff;
+    	border-top-left-radius: 4px;
+    	border-top-right-radius: 4px;
+	transition:.2s cubic-bezier(.29,.62,.61,.3);							
+}
+
+/* 서브 메뉴의 li 태그에 마우스 오버한 경우 ->  글씨 색상 및 배경 색 스타일 설정 */
+.subMenuLink:hover {        				
+    color:#CC0000;                 									
+    background: #D1E2F2;											
+}
+
+
+/*****************************************
+content 영역  
+*****************************************
+
+/*****************************************
+image_slide_box 영역  
+******************************************/
+.image_slide_box {
+	background: #2DA7BE;
+}
+
+/*****************************************
+first_menu_box 영역  
+******************************************/
+.first_menu_box {
+	background: #0356E2;
+}
+
+/*****************************************
+second_menu_box 영역  
+******************************************/
+.second_menu_box {
+	background: #2E344A;
+}
+
+/*****************************************
+footer 영역  
+******************************************/
+.footer {
+	/*background: #6B9EDF;*/
+	background-image: url('http://vtk.a2sys.co.kr/xe/layouts/vtk_layout/img/footer_background_img.jpg') ;	
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 160 110" enable-background="new 0 0 160 110" xml:space="preserve">
+<g>
+	<g>
+		<g>
+			<g>
+				<g>
+					<g>
+						<path fill="none" stroke="#4A4A49" stroke-width="5" stroke-miterlimit="10" d="M145,68.3V34.8c0-13.9-11.3-25.2-25.2-25.2
+							H42.1"/>
+						<g>
+							<polygon fill="#4A4A49" points="155,65.3 145,82.6 135,65.3 							"/>
+						</g>
+					</g>
+				</g>
+				<g>
+					<g>
+						<path fill="none" stroke="#4A4A49" stroke-width="5" stroke-miterlimit="10" d="M15,41.7v33.5c0,13.9,11.3,25.2,25.2,25.2
+							h77.7"/>
+						<g>
+							<polygon fill="#4A4A49" points="5,44.7 15,27.4 25,44.7 							"/>
+						</g>
+					</g>
+				</g>
+			</g>
+			<g>
+				<g>
+					<polyline fill="none" stroke="#4A4A49" stroke-width="2" stroke-miterlimit="10" points="114.9,33.5 87.9,33.5 68.3,53 
+						44.7,53 					"/>
+					<polyline fill="none" stroke="#4A4A49" stroke-width="2" stroke-miterlimit="10" points="114.9,47.5 87.9,47.5 68.3,67.1 
+						44.7,67.1 					"/>
+					<circle fill="none" stroke="#4A4A49" stroke-width="2" stroke-miterlimit="10" cx="119.7" cy="33.5" r="4.4"/>
+					<circle fill="none" stroke="#4A4A49" stroke-width="2" stroke-miterlimit="10" cx="119.7" cy="47.5" r="4.4"/>
+					<polyline fill="none" stroke="#4A4A49" stroke-width="2" stroke-miterlimit="10" points="114.9,61.6 87.9,61.6 68.3,81.1 
+						44.7,81.1 					"/>
+					<circle fill="none" stroke="#4A4A49" stroke-width="2" stroke-miterlimit="10" cx="119.7" cy="61.6" r="4.4"/>
+					<circle fill="none" stroke="#4A4A49" stroke-width="2" stroke-miterlimit="10" cx="40.3" cy="53" r="4.4"/>
+					<circle fill="none" stroke="#4A4A49" stroke-width="2" stroke-miterlimit="10" cx="40.3" cy="67.1" r="4.4"/>
+					<circle fill="none" stroke="#4A4A49" stroke-width="2" stroke-miterlimit="10" cx="40.3" cy="81.1" r="4.4"/>
+				</g>
+			</g>
+		</g>
+		<g opacity="0.5">
+			<g>
+				<g>
+					<path fill="#4A4A49" d="M68,56.5L53.8,85.3h-7.8l14.3-28.9L46.5,28.7h7.8L68,56.5z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path fill="#4A4A49" d="M90.8,56.5L76.6,85.3h-7.8l14.3-28.9L69.4,28.7h7.8L90.8,56.5z"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<path fill="#4A4A49" d="M113.7,56.5L99.4,85.3h-7.8l14.3-28.9L92.2,28.7h7.8L113.7,56.5z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+body {
+	font-family: 'Malgun Gothic','Segoe UI', sans-serif;
+	background: #F8F8F8;													
+	color: #606060;		
+	font-size:12px;   													
+}
+
+/*****************************************
+header 영역  
+******************************************/
+
+.logoBox {
+  width:320px;
+  
+}
+
+/*메인메뉴 a태그에 설정할 스타일 -> 폰트 사이즈,글씨 색상, 굵기 설정 */
+.mainMenuLink {                         
+    display: block;
+    height:60px;
+    line-height: 60px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size:1.154em;                    									
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #3C3C3C;
+}
+
+/*서브메뉴 a태그에 설정할 스타일 -> 폰트 사이즈,글씨 색상, 굵기 설정 */
+.subMenuLink {
+	font-size:1.0em;									                   	
+	color:#ECECEC;															
+	display: block;
+}
+
+/*****************************************
+mouse hover & active effect 관련  CSS 설정  
+******************************************/
+/* 메인 메뉴의 li에 마우스오버 되었을 때, mainMenuLink 클래스(메인메뉴 a 요소)에 대한 스타일 관련 transition 효과 (cubic-bezier로 애니메이션 효과) */
+.gnb > ul > li:hover .mainMenuLink { 
+   	color:#005BA9;
+   	font-weight: 900;																
+   	transition:.2s cubic-bezier(.29,.62,.61,.3);	
+   	/*background-color: #DEECF8;						*/
+}
+
+
+
+/* gnb의 1차 메뉴 active 되었을 때 a링크 navMenuLink style 설정  */
+.gnb > ul > li.active .mainMenuLink{
+	color:#005BA9;
+   	font-weight: 900;																
+   	
+}
+
+/* 서브 메뉴의 a 태그에 설정할 스타일 mouseover, active effect setting  */
+.subMenuLink:hover {        				
+    background: #B3D5E8;
+    color:#000;                 									
+    font-weight: 700;																
+   	transition:.2s cubic-bezier(.29,.62,.61,.3);											
+}
+
+.gnb > ul > li.active > ul > li.active .subMenuLink {
+  	background: #B3D5E8;	
+    color:#000;                 									
+    font-weight: 700;																
+}
+
+.gnb > ul > li.active > ul {
+ 	 display: block;  	
+}
+
+ /* 1차 메뉴 active시 2차 메뉴(subMenu)의 마지막 영역 overflow 방지 */
+ li.active:nth-child(2) > ul:nth-child(2) {
+ 	width:640px;
+ }
+ li.active:nth-child(3) > ul:nth-child(2) {
+ 	width:320px;
+ }
+li.active:nth-child(4) > ul:nth-child(2) {
+   width:400px;
+}
+.gnb> ul.gnbMenu > li:nth-child(5).active > ul:nth-child(2) {
+ 	display: block;
+	left:-480px;
+ 	width: 680px;
+ }
+
+ 
+
+ 
+
+
+/*****************************************
+footer 영역  
+******************************************/
+.footer {
+	background: #F8F8F8;
+}

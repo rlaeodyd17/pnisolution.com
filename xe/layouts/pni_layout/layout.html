@@ -1,0 +1,79 @@
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+<load target="user_layout.css" />
+<load target="ui_object_layout.css" />
+<load target="ui_object_color_font_mouseoverEffect.css" />
+<load target="user_layout.js" />
+<!-- user_layout -->
+<div class="user_layout">
+	<!-- header -->
+	
+	<div class="header">
+		<!-- aux -->
+		<div class="aux">
+				<div class="logo_box">
+					<a href="{geturl('')}" id="siteTitle" class="logoBox">
+						<img src="/xe/layouts/pni_layout/img/pni_logo.svg" alt="PNILogo" cond="!Context::getSiteTitle() && !$layout_info->LOGO_IMG && !$layout_info->LOGO_TEXT">
+						<block cond="Context::getSiteTitle() && !$layout_info->LOGO_IMG && !$layout_info->LOGO_TEXT">{Context::getSiteTitle()}</block>
+						<img src="{$layout_info->LOGO_IMG}" alt="{$layout_info->LOGO_TEXT}" cond="$layout_info->LOGO_IMG">
+						<block cond="!$layout_info->LOGO_IMG && $layout_info->LOGO_TEXT">{$layout_info->LOGO_TEXT}</block>
+					</a>
+				</div>
+				<!-- gnb  -->
+				<div class="gnb">
+					<ul class="gnbMenu">
+						<li loop="$global_menu->list=>$key1,$val1" class="active"|cond="$val1['selected']">
+							<a class="mainMenuLink" href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'">{$val1['link']}</a>
+							<ul class="subMenu" cond="$val1['list']">
+								<li loop="$val1['list']=>$key2,$val2" class="active"|cond="$val2['selected']">
+									<a class="subMenuLink" href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">{$val2['link']}</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- // gnb -->
+				<!-- side -->
+				<div class="side">
+					<img widget="login_info" skin="default"/>
+				</div>
+				<!-- // side -->
+				<!-- search_box -->
+				<!-- <div class="search_box">
+						<form action="{getUrl()}" method="get" class="search">
+							<input type="hidden" name="vid" value="{$vid}" />
+							<input type="hidden" name="mid" value="{$mid}" />
+							<input type="hidden" name="act" value="IS" />
+							<input id="q" type="text" name="is_keyword" value="{$is_keyword}" title="{$lang->cmd_search}" />
+							<input id="searchBtn" type="image" alt="search" src="/xe/layouts/pni_layout/img/search_icon.jpg" value="{$lang->cmd_search}" />
+						</form>
+				</div> -->
+				<!-- // search_box -->
+		</div>
+		<!-- // aux -->
+	</div>
+	<!-- // header -->
+	<!-- nav_space -->
+    <div class="nav_space"></div>
+    <!-- // nav_space -->
+
+	<!-- body main sub-->
+	<div class="body main"|cond="$layout_info->LAYOUT_TYPE=='MAIN_PAGE'" class="body sub"|cond="$layout_info->LAYOUT_TYPE=='SUB_PAGE'">
+		<!-- content -->
+		<div class="content" id="content">
+			{$content}
+		</div>
+		<!-- // content-->
+	</div>
+	<!-- // body main sub-->
+
+	<!-- footer -->
+	<footer class="footer">
+		<div class="footer_logo"></div>
+		<p cond="!$layout_info->FOOTER">Powered by <a href="http://xpressengine.com/">XE</a>.</p>
+		<p cond="$layout_info->FOOTER">{$layout_info->FOOTER}</p>
+	</footer>
+	<!-- // footer -->
+</div>
+<!-- // user_layout -->
+
+

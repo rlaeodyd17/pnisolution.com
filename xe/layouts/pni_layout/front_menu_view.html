@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<title>아키에이지</title>
+		<style>
+			body {
+				margin:0;
+				font-family: "nanumbarungothic",sans-serif;
+			}
+			#wrap {
+				width:1280px;
+				margin:auto;
+				background:#F2F2F2;
+	
+			}
+			#wrap>h1 {
+				margin: 0;
+			}
+			
+			#featureList ul {
+				margin:0;
+				padding:5px 0;
+				list-style: none;
+				overflow: hidden;
+			}
+			
+			#featureList li {
+				width:318px;
+				height:778px;
+				margin-bottom:10px;
+				float: left;
+			}
+			
+			#featureList li>a {
+				display:block;
+				width:318px;
+				height:778px;
+				position: relative;
+			}
+			
+			#featureList li>a>section {
+				width:318px;
+				height:778px;
+				position: absolute;
+				left:0;
+				top:0;	
+			}
+			
+			#worldView div {
+				background-position: 0 0;
+			}
+			
+			#species div {
+				background-position:-251px 0;
+			}
+			
+			#job div {
+				background-position: -502px 0;	
+			}
+			#region div {
+				background-position: -753px 0;
+			}
+			
+
+			#featureList a div {/* front,back */
+				width:318px;
+				height:778px;
+				position: absolute;
+				left:0;
+				top:0;
+				backface-visibility: hidden;
+				transition: .2s ease;
+			}
+			
+			#featureList .back {
+				background:url('http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/back.jpg') ;	
+				transform: perspective(400px) rotateY(180deg);
+			}
+			
+			#featureList a:hover .back {
+				transform: perspective(400px) rotateY(360deg);
+			}
+			
+			#featureList .front {
+				background-image:url('http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/front.png');
+				transform: perspective(400px) rotateY(0deg);
+			}
+			
+			#featureList a:hover .front {
+				transform: perspective(400px) rotateY(180deg);
+				
+			}
+			
+			.hide {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<h1 class="hide">사이트주요메뉴</h1>
+			<section id="featureList">
+				<h2 class="hide">메인 메뉴 리스트</h2>
+				<ul>
+					<li id="worldView">
+						<a href="">
+							<section>
+								<hgroup class="hide">
+									<h3>2천년의 신화</h3>
+									<h2>세계관</h2>
+								</hgroup>
+								<div class="back"></div>
+								<div class="front"></div>
+							</section>	
+						</a>
+					</li>
+					<li id="species">
+						<a href="">
+							<section>
+								<hgroup class="hide">
+									<h3>동서의 대립과 야망</h3>
+									<h2>종족</h2>
+								</hgroup>
+								<div class="back"></div>
+								<div class="front"></div>
+							</section>	
+						</a>
+					</li>
+					<li id="job">
+						<a href="">
+							<section>
+								<hgroup class="hide">
+									<h3>120가지의 가능성</h3>
+									<h2>직업</h2>
+								</hgroup>
+								<div class="back"></div>
+								<div class="front"></div>
+							</section>	
+						</a>
+					</li>
+					<li id="region">
+						<a href="">
+							<section>
+								<hgroup class="hide">
+									<h3>여긴 꼭 가보자</h3>
+									<h2>지역</h2>
+								</hgroup>
+								<div class="back"></div>
+								<div class="front"></div>
+							</section>	
+						</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,207 @@
+@charset "UTF-8";
+
+
+body, html {
+	width: 100%;
+	font-family: 'Malgun Gothic','Segoe UI', sans-serif;
+}
+
+.nav_space {
+	height: 30px;
+	background:#005BA9;
+}
+
+.user_layout {
+	position: relative;														
+	margin: 0px auto;														
+}
+
+
+/*--------.user_layout내의 header 영역(.aux, .logo_box, .gnb, .side, search_box ) 설정------------------start */
+.header {
+	width: 100%;															
+	height: 60px;         													
+	position: relative;   	  												
+	z-index: 50;															
+}
+
+.header .aux {
+	width: 1280px;
+	margin: auto;
+	height: 60px;
+}
+
+.header .aux div {
+	float: left;
+}
+
+.header .logo_box {
+	width: 80px;
+	height: 60px;
+	position: absolute;
+	left: 7.5%;
+}
+
+.header .logo_box > .logoBox > img {
+   height: 60px;
+ }
+
+/******global navigation bar 설정 **************/
+/* gnb내의 ul 태그 안에 있는 li 태그의 스타일 적용 */
+
+.gnb {
+	position: absolute;
+	left: 29%;
+	height: 60px;	
+
+}
+
+ul.gnbMenu {
+	float: left;
+	/*width: 960px;*/
+	height: 60px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul.gnbMenu > li {
+	float: left;
+	width: 160px;
+	height: 60px;
+	text-align: center;
+	position: relative;
+}
+
+ul.gnbMenu > li > a {
+	display: block;
+	line-height: 60px;
+	height: 100%;
+	width: 100%;
+	text-decoration: none;
+	margin: 0;
+}
+
+ul.gnbMenu >li >ul.subMenu {        
+	display: none;
+    position: absolute; 
+    left: 0;
+    width: 800px;
+ }
+/*
+ .gnbMenu > li:nth-child(2) > ul:nth-child(2) {
+ 	background-color: #32C099;
+ }
+
+.gnbMenu > li:nth-child(3) > ul:nth-child(2) {
+	width:320px;
+	background-color: #18AACD;
+}
+
+ .gnbMenu > li:nth-child(4) > ul:nth-child(2) {
+ 	width:480px;
+ 	background-color: #B34150;
+ }
+*/
+
+ul.gnbMenu > li:hover > ul.subMenu {
+ 	display: block;
+ }
+
+
+ /*ul.gnbMenu > li:nth-child(2) > ul:nth-child(2), ul.gnbMenu > li:nth-child(4) > ul:nth-child(2) {
+ 	
+ }*/
+
+/* 1차 메뉴 마우스오버시  2차 메뉴(subMenu) 넓이에 대한 예외 처리 */
+.gnbMenu > li:nth-child(4) > ul:nth-child(2) > li:nth-child(1),.gnbMenu > li:nth-child(4) > ul:nth-child(2) > li:nth-child(2),.gnbMenu > li:nth-child(5) > ul:nth-child(2) > li:nth-child(2) {
+	width:200px;
+}
+
+ /* 1차 메뉴 마우스오버시  2차 메뉴(subMenu)의 마지막 영역 overflow 방지 및 위치 조정 처리 */ 
+ul.gnbMenu > li:nth-child(5):hover > ul:nth-child(2) {
+ 	display: block;
+ 	left:-480px;
+	/*background-color: #E9B649;*/
+ }
+
+/*  클래스가 subMenu인 태그 안에 있는 클래스 이름이 subMenuLi인 li 태그의 스타일 적용 */
+.gnb> ul.gnbMenu > li > ul.subMenu > li {
+	float: left;
+	width: 160px;
+	height: 30px;														
+	line-height: 30px;													
+}
+
+
+/******global navigation bar 설정 end **************/
+
+
+.header > .aux > .side {
+	position: absolute;
+	right: 0.5%;
+	height: 60px;
+	line-height: 30px;
+}
+
+/*.header > .aux >.search_box {
+    position: absolute;
+    right: 5px;
+    height: 60px;
+	line-height: 60px;
+}*/
+
+/*-------------- .user_layout내의 header 영역(.logoBox, .side, search_box, .gnb menu_wrap,.menu_on, .subMenu ) 설정--------------------end */
+
+/*-------------- .body .sub 내의 localnavigationbar 영역 설정--------------------start */
+.body .sub {
+	position: relative;
+	width:100%;
+}
+
+
+/* body main 클래스를 가진 div 태그의 content 영역 설정  */
+.main >.content {
+	width: 100%;
+	/*background-color: #7F7D7E;*/
+}
+
+.board {
+    font-size: 12px;
+    font-family: 'Malgun Gothic','Segoe UI', sans-serif;
+    width: 940px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+/*-------------- footer  영역 설정------------------------------------------------ start*/
+
+.footer {
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
+	height: 30px; 
+	padding: 10px 0px;	
+	clear:both;
+	line-height: 30px;
+
+}
+
+.footer .footer_logo {
+	position: absolute;
+	height: 30px;
+	width:20%;
+	background: url('http://pni.a2sys.co.kr/xe/layouts/pni_layout/img/pni_footer_logo.svg') no-repeat 50% 0;
+	border-right: 1.5px solid #D9DFE4;
+}
+.footer p {
+	position: absolute;
+	left: 20%;
+	color:#3C3C3C;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 500;
+	padding-left: 10px;
+}
+
+/*-------------- footer  영역 설정 ---------------------------------------------------- end */

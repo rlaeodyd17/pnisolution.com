@@ -1,0 +1,248 @@
+@charset "UTF-8";
+
+
+/* 상단 수평 박스 설정 */
+.horizon_top_box { 					 											
+	position: absolute; 		 											/* 클래스가 horizonBox인 div 태그, html의 flow에 영향을 미치지 않게 absolute 설정 */
+	z-index: 1;                  											/* index값 header 보다 작게 하여 header 태그가 아래에 놓여 있는 효과  */
+	width: 100%;				      									    /* 상단 수평 영역의 기본 넓이 */
+	height: 70px;				       								 		/* 상단 수평 영역의 기본 높이 */
+}
+
+.sub_header_box { 					 											
+	position: absolute; 		 											/* 클래스가 sub_header_box인 div 태그, html의 flow에 영향을 미치지 않게 absolute 설정 */
+	top:70px;
+	z-index: 11;                  											/* index값 header 보다 작게 하여 header 태그가 아래에 놓여 있는 효과  */
+	width: 100%;				      									    /* 상단 수평 영역의 기본 넓이 */
+	height:40px;															/* 상단 수평 영역의 기본 높이 */
+ 	visibility:hidden;
+  	opacity:0;													
+ }
+
+/* 전체 wrap 박스 설정 */
+.user_layout {
+	position: relative;														/* 아이디 이름이 wrap인 div 태그 내부의 포지션 절대 위치 설정 */
+	max-width: 1280px;														/* 최대넓이 1280px 설정 */	
+	margin: 0px auto;														/* margin-top/bottom에 0px 및 left/right auto로 wrap div 태그를 가운데로 위치하게 함 */
+}
+
+
+/*--------.user_layout내의 header 영역(.logoBox, .side, search_box, .gnb menu_wrap,.menu_on, .subMenu ) 설정------------------start */
+.header {
+	width: 100%;															/* header의 기본 넓이 설정: wrap의 넓이를 상속 */	
+	height: 70px;         													/* header의 기본 높이 70px로 설정 */
+	position: relative;   	  												/* 해당 div 태그 내부의 포지션 초기화 */
+	z-index: 50;															/* horizonBox 보다 크게 하여 header 태그가 띄워져 있는 효과  */
+}
+
+.header:after {
+	content: "";
+	display: block;
+	clear: both
+}
+
+.header> h1 >.logoBox {
+	position:absolute;													    /* 클래스 이름이 logBox인 h2 태그,  html의 flow에 영향을 미치지 않게 absolute 설정 */
+	top:0;																	/* 포지셔닝 콘텍스트 header를 기준점으로 원점 위치  설정 */	
+	left:0;																	/* 포지셔닝 콘텍스트 header를 기준점으로 원점 위치 설정 */
+	width:17%;																/* logoBox의 기본 넓이 178px -> 비율로 변경 설정 */
+	height: 70px;															/* logoBox의 기본 높이 70px 설정 */
+}
+
+.header>.side {
+	position: absolute;
+	right: 0px;
+	top: 5px;
+}
+
+.header>.search_box {
+    position: absolute;
+    right: 0px;
+    top: 35px;
+}
+
+/*global navigation bar 설정 */
+.gnb {
+	position:absolute;  													/* 클래스 이름이 menu_wrap인 div 태그, html의 flow에 영향을 미치지 않게 absolute 설정 */
+	top:10px;          													 	/* 포지셔닝 콘텍스트 header를 기준점으로 위로 10px y축 위치 설정 */
+	left:17%;         														/* 포지셔닝 콘텍스트 header를 기준점으로 좌로 17% x축 위치 설정 */
+	min-width:65%;														/* 최소넓이 840px-> 43.75% 설정 */			
+	height: 50px;															/* 기본 높이 50px 설정 */			
+	float: left;
+}
+
+/* gnb내의 ul 태그 안에 있는 li 태그의 스타일 적용 */
+.gnb> ul> li {  
+	float:left;																/* 왼쪽으로 나열되도록 설정 */
+	width:15%;    														/* 최소 넓이를 120px-> 16%로 설정 */
+	height:50px;															/* 기본 높이를 52px로 설정 */
+	line-height: 50x;														/* line-height값을 기본 높이와 같게 하면,세로 정렬을 가운데로 설정 효과 */
+	margin-right: 5px;
+	top:15px;
+}
+
+/* 서브 메뉴 위치 및 스타일 설정 -> html의 flow에 영향을 미치지 않게 absolute, 초기에 보이지 않는 효과 hover 했을 때 보이도록 설정 */
+.navMenu >li >ul.subMenu {              
+    position: absolute;     												
+ 	visibility:hidden;
+  	opacity:0;													
+  	width:70em;
+  	top:48px;
+  	bottom:0;
+ }
+
+/*  클래스가 subMenu인 태그 안에 있는 클래스 이름이 subMenuLi인 li 태그의 스타일 적용 */
+.gnb> ul.navMenu > li > ul.subMenu > li {
+	float:left;
+	width:20%;
+	height:50px;															/* 기본 높이를 30px로 설정 */
+	line-height: 50px;														/* line-height값을 기본 높이와 같게 하면,세로 정렬을 가운데로 설정 효과 */
+	/*border-left: 6px solid #D6D6D6;
+	border-right: 6px solid #D6D6D6;*/
+}
+
+/* 서브 메뉴의 a 태그에 설정할 스타일 실제크기 112*43*  */
+.subMenuLink { 
+	border-bottom:1px solid #D6D6D6;
+	padding-right: 5px;
+    display: block;
+    color: #005091;
+    
+}
+/*-------------- .user_layout내의 header 영역(.logoBox, .side, search_box, .gnb menu_wrap,.menu_on, .subMenu ) 설정--------------------end */
+
+/*-------------- .body .sub 내의 localnavigationbar 영역 설정--------------------start */
+			.body .sub {
+				position: relative;
+				width:100%;
+			}
+
+			.lnb {
+				float: left;
+				width: 17%;  			/* width 변화에 대한 상대 비율로 변경 */
+				/*width: 178px;*/
+				text-align: right;
+				box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.6), 0 0 200px 1px rgba(255, 255, 255, 0.5);
+				background: rgb(255,255,255);											
+				background: -moz-linear-gradient(top,  rgb(255,255,255) 0%, rgb(229,229,229) 100%);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(255,255,255)), color-stop(100%,rgb(229,229,229)));
+				background: -webkit-linear-gradient(top,  rgb(255,255,255) 0%,rgb(229,229,229) 100%);
+				background: -o-linear-gradient(top,  rgb(255,255,255) 0%,rgb(229,229,229) 100%);
+				background: -ms-linear-gradient(top,  rgb(255,255,255) 0%,rgb(229,229,229) 100%);
+				background: linear-gradient(to bottom,  rgb(255,255,255) 0%,rgb(229,229,229) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+			}
+
+			.lnb > h2 {
+				padding:15px;
+				border-bottom: 4px solid #002535;
+				font-size:1.1em;
+				font-weight:900;
+				background: transparent;
+			}
+			/* 1차 메뉴 navMenuLink style 설정  */
+			.lnb > ul > li > a {
+				line-height: 40px;
+				font-size:1.1em;
+				font-weight:900;
+				padding-right:5px;
+				display:block;
+			}
+			
+			.lnb > ul > li > a:hover {
+				background:#D1E2F2; 
+			}
+
+			/* navgation의 1차 메뉴 active 되었을 때 a링크 navMenuLink style 설정  */
+			.lnb > ul > li.active .navMenuLink{
+				background:#6B9EDF;
+				color:#fff; 
+			}
+						
+			.lnb > ul > li > ul > li {
+				border-bottom: 1px dotted #ddd;			
+			}
+			
+			/* 2차 메뉴 navSubMenuLink style 설정  */
+			.lnb > ul > li > ul > li > a {
+				color:#2682CB; 
+				line-height:30px;
+				font-size:1em;
+				font-weight:700;
+				text-align:right;
+				display:block;
+				padding-right:10px;
+				padding-left:5px;
+			}
+			
+			/* navgation의 2차 메뉴 a링크 navSubMenuLink hover하는 경우 효과 설정  */
+			.lnb > ul > li > ul > li > a:hover {
+			  background: #DDECF4;
+			}
+
+			/* navgation의 2차 메뉴 active 되었을 때 a링크 navSubMenuLink style 설정  */
+			.lnb > ul > li > ul > li.active .navSubMenuLink {
+			  background: #C8D9EB;
+			  color: #4c4c4c;
+			}
+			
+			/* active 클래스 외에 것은 보이지 않게 하기 */
+			.lnb ul ul {
+				display: none;
+			}
+			.lnb li.active ul {
+				display: block;
+			}
+/*-------------- .body .sub 내의 localnavigationbar 영역 설정--------------------end */
+
+/* body main 클래스를 가진 div 태그의 content 영역 설정  */
+.main >.content {
+	float: left;
+	width: 100%;
+	background: #F8F8F8;
+}
+
+
+/* body sub 클래스를 가진 div 태그의 content 영역 설정 */
+.sub >.content {
+	float: left;
+	width: 80%;  			/* width 변화에 대한 상대 비율로 변경 */
+	/*width: 840px;*/
+	background: #F8F8F8;
+	margin-left: 10px;
+}
+
+/* 클래스가 image_slide_box인 div 태그의 스타일 설정  */
+.image_slide_box {
+	height: 294px;  														/* 기본 높이는 294px로 설정 */
+}
+
+/* 클래스가 first_menu_box인 div 태그의 스타일 설정  */
+.first_menu_box {
+	height: 230px;  														/* 기본 높이는 230px로 설정 */
+	margin: 10px auto; 														/* margin-top/bottom에 10px 및 left/right에는 auto로 first_menu_box div 태그 상자를 가운데로 위치하게 함 */
+}
+/* 클래스가 second_menu_box인 div 태그의 스타일 설정  */
+.second_menu_box {
+	height: 280px; 															/* 기본 높이는 280px로 설정 */
+}
+
+/*-------------- footer  영역 설정------------------------------------------------ start*/
+
+.footer {
+	height: 30px; 
+	padding: 10px 0px;	
+	clear:both;
+	line-height: 30px;
+}
+
+.footer p {
+	position: absolute;
+	left: 17%;
+	color:#3C3C3C;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/*-------------- footer  영역 설정 ---------------------------------------------------- end */
